@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marks Converter</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Marks Converter</h1>
+  <p>Enter your percentage:</p>
+
+  <input type="number" id="marks" placeholder="e.g. 85">
+  <br>
+  <button onclick="convert()">Convert</button>
+
+  <h2 id="result"></h2>
+
+  <script>
+    function convert() {
+      let marks = document.getElementById("marks").value;
+      let usGrade = "";
+      let ukGrade = "";
+
+      if (marks >= 90) {
+        usGrade = "A";
+        ukGrade = "A*";
+      } else if (marks >= 80) {
+        usGrade = "B";
+        ukGrade = "A";
+      } else if (marks >= 70) {
+        usGrade = "C";
+        ukGrade = "B";
+      } else if (marks >= 60) {
+        usGrade = "D";
+        ukGrade = "C";
+      } else {
+        usGrade = "F";
+        ukGrade = "Fail";
+      }
+
+      document.getElementById("result").innerHTML =
+        "US Grade: " + usGrade + "<br>UK Grade: " + ukGrade;
+    }
+  </script>
+
+</body>
+</html>
